@@ -20,3 +20,5 @@ Views & Templates: Develops views for pages and corresponding HTML templates.
 Navigation: Links are established within templates for seamless page switching.
 Security: Protects authenticated views using Django's @login_required.
 Course Application: Implements a form for users to apply for courses on the "Apply" page.
+
+
