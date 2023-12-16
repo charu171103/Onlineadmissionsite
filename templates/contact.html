@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload test</title>
+  <style>
+    .required
+  {
+      color: red;
+  }
+  </style>
+</head>
+<body>
+    
+<div class="container  mb-3 py-4">
+  <form method="post" enctype="multipart/form-data" action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+      <lable for="name" style="font-size: 20px;">Name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="name" name="name" placeholder="As per 10th marksheet">
+    </div>
+
+    <div class="form-group">
+      <lable for="father" style="font-size: 20px;">Father name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="father" name="father" placeholder="eg:xyz">
+    </div>
+
+    <div class="form-group">
+      <lable for="mother" style="font-size: 20px;">Mother name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="mother" name="mother" placeholder="eg: abc xyz">
+    </div>
+
+    <div class="form-group">
+      <label for="email" style="font-size: 20px;">Email address</label> <span class="required">*</span>
+      <input type="email" class="form-control" id="email" name="email" placeholder="@example.com">
+    </div>
+
+    <div class="form-group">
+      <lable for="phone" style="font-size: 20px;">Contact Number</label> <span class="required">*</span>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter the Mobile Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="phone1" style="font-size: 20px;">Contact Number(Alternate)</label> <span class="required">*</span>
+        <input type="phone" class="form-control" id="phone1" name="phone1" placeholder="Enter the Alternate Mobile Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="phone1" style="font-size: 20px;">First graduate</label> <span class="required">*</span>
+        <input type="phone" class="form-control" id="phone1" name="phone1" placeholder="Type yes or no">
+    </div>
+
+
+
+    <div class="form-group">
+      <lable for="JeeAppNo" style="font-size: 20px;">JEE Application Number</label> 
+        <input type="number" class="form-control" id="JeeAppNo" name="JeeAppNo" placeholder="Enter the Application Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="JeePercentile" style="font-size: 20px;">JEE Percentile</label>
+        <input type="number" class="form-control" id="JeePercentile" name="JeePercentile" placeholder="Enter the Percentile">
+    </div>
+
+    <div class="form-group">
+      <lable for="JeeRank" style="font-size: 20px;">JEE Rank</label>
+        <input type="number" class="form-control" id="JeeRank" name="JeeRank" placeholder="Enter the Rank">
+    </div>
+
+    <div class="form-group">
+      <label for="Address1" style="font-size: 20px;">Address(Permanent)</label> <span class="required">*</span>
+      <textarea class="form-control" id="Address1" rows="3" name="Address1"
+        placeholder="Enter the Permanent Address"></textarea>
+    </div>
+
+    <div class="form-group">
+      <lable for="CollegeName" style="font-size: 20px;">Secondary School</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="CollegeName" name="CollegeName" placeholder="Enter the 10th school Name">
+    </div>
+
+    <div class="form-group">
+      <lable for="Percentage" style="font-size: 20px;">Percentage obtained in standard 10</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="Percentage" name="Percentage" placeholder="Enter the 10th Percentage">
+    </div>
+
+    <div class="form-group">
+      <lable for="CollegeName" style="font-size: 20px;">Higher Secondary School</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="CollegeName" name="CollegeName" placeholder="Enter the 12th school Name">
+    </div>
+
+    <div class="form-group">
+      <lable for="Percentage" style="font-size: 20px;">Percentage obtained in standard 12</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="Percentage" name="Percentage" placeholder="Enter the 12th Percentage">
+    </div>
+    
+    <div class="form-group">
+      <label for="degree" style="font-size: 20px;">Degree</lable><span class="required">*</span>
+        <select name ="degree" ><option>Select from below<option>Bachelor of Engineering <option>Bachelor of technology<option>Integrated M.Sc</select>
+    </div>
+    <div class="form-group">
+      <label for="course" style="font-size: 20px;">Course / branch </lable><span class="required">*</span>
+        <select name ="course" ><option>Select from below<option>Computer Science Engineering <option>Electrical and Electronics Engineering
+          <option>Mechanical Engineering<option>Civil Engineering<option>Electronics and Communication Engineering<option>Chemical Engineering<option>Information and Technology
+          <option>Artificial Intelligence and Data Science<option>Software Systems<option>Data Science<option>Decision and Computing Science<opyion>Artificial Intelligence and Machine Learning</select>
+    </div>
+
+    <div class="form-group">
+      <lable for="file1" style="font-size: 20px;">Aadhar Number</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="file1" name="file1" placeholder="Enter aadhar number">
+    </div>
+
+    <div class="form-group">
+      <lable for="file1" style="font-size: 20px;">School Transfer Certificate Number</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="file1" name="file1" placeholder="Please enter 6 digit in transfer certificate">
+    </div>
+
+    <div class="form-group">
+      <input type="checkbox" name="x"> I assure that all the  above entered details are true to the best of my knowledge<br>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+ 
+
+</div>
+  
+</body>
+</html>
+
+{% endblock body %}
